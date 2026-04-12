@@ -1,13 +1,18 @@
 server:
   port: 8081
 spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 50MB
   application:
-    name: hmdp
+    name: localguide
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/hmdp?useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/localguide?useSSL=false&serverTimezone=UTC
     username: root
-    password: root123456
+    password: 123456
   redis:
     host: 127.0.0.1
     port: 6379
@@ -21,7 +26,7 @@ spring:
   jackson:
     default-property-inclusion: non_null # JSON处理时忽略非空字段
 mybatis-plus:
-  type-aliases-package: com.hmdp.entity # 别名扫描包
+  type-aliases-package: com.localguide.entity # 别名扫描包
 logging:
   level:
-    com.hmdp: debug
+    com.localguide: debug
