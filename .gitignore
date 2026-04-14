@@ -5,7 +5,6 @@
 classes/
 bin/
 tmp/
-tmp/
 *.tmp
 *.bak
 *.swp
